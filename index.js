@@ -11,6 +11,12 @@ canvas.addEventListener("click", (e) => {
     drawCircle(e.x, e.y);
 }
 );
+canvas.addEventListener('touchmove',(e)=>{
+    var touch = ev.originalEvent.changedTouches[0];
+    var y = touch.clientY;
+    var x = touch.clientX;
+    console.log(x,y);
+});
 canvas.addEventListener("mousemove",(e)=>{
     drawCircle(e.x,e.y);
 })
