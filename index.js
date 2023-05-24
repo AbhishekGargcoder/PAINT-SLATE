@@ -11,18 +11,15 @@ addEventListener("resize", () => {
 //     drawCircle(e.x, e.y);
 // }
 // );
-canvas.addEventListener('touchmove',(e)=>{
+canvas.addEventListener("touchmove",(event)=>{
     // var touch = e.originalEvent.changedTouches[0];
-    var x = e.touches[0].clientX;
-    var y = e.touches[0].clientY;
+    var x = event.touches[0].clientX;
+    var y = event.touches[0].clientY;
     console.log(x,y);
-    drawCircle(x,y);
-});
-const drawCircle = (x, y) => {
     ctx.beginPath();
     ctx.strokeStyle = "red";
     ctx.fillStyle = "red";
     ctx.arc(x, y, 10, 0, Math.PI * 2);
     ctx.stroke();
     ctx.fill();
-}
+});
