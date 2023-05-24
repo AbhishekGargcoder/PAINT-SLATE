@@ -7,25 +7,22 @@ addEventListener("resize", () => {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
 })
-canvas.addEventListener("click", (e) => {
-    drawCircle(e.x, e.y);
-}
-);
+// canvas.addEventListener("click", (e) => {
+//     drawCircle(e.x, e.y);
+// }
+// );
 canvas.addEventListener('touchmove',(e)=>{
-    var touch = ev.originalEvent.changedTouches[0];
-    var y = touch.clientY;
-    var x = touch.clientX;
+    // var touch = e.originalEvent.changedTouches[0];
+    var x = e.touches[0].clientX;
+    var y = e.touches[0].clientY;
     console.log(x,y);
+    drawCircle(x,y);
 });
-canvas.addEventListener("mousemove",(e)=>{
-    drawCircle(e.x,e.y);
-})
 const drawCircle = (x, y) => {
     ctx.beginPath();
     ctx.strokeStyle = "red";
     ctx.fillStyle = "red";
     ctx.arc(x, y, 10, 0, Math.PI * 2);
-    // ctx.rect(x,y,10,10);
     ctx.stroke();
     ctx.fill();
 }
