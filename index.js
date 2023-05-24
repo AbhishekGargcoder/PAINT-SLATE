@@ -19,7 +19,7 @@ canvas.addEventListener("touchmove",(event)=>{
     ctx.beginPath();
     ctx.strokeStyle = "red";
     ctx.fillStyle = "red";
-    ctx.arc(x, y, 10, 0, Math.PI * 2);
+    ctx.arc(x, y, 40, 0, Math.PI * 2);
     ctx.stroke();
     ctx.fill();
 });
